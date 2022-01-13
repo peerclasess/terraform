@@ -14,17 +14,17 @@ resource "aws_route_table" "arms_internal_route" {
 }
 
 resource "aws_route_table_association" "arms_internal_route_association-1" {
-  subnet_id      = aws_subnet.nuxeo.id
+  subnet_id      = aws_subnet.nuxeo-1.id
   route_table_id = aws_route_table.arms_internal_route.id
 }
 
 resource "aws_route_table_association" "arms_internal_route_association-2" {
-  subnet_id      = aws_subnet.kafka.id
+  subnet_id      = aws_subnet.kafka-1.id
   route_table_id = aws_route_table.arms_internal_route.id
 }
 
 resource "aws_route_table_association" "arms_internal_route_association-3" {
-  subnet_id      = aws_subnet.opensearch.id
+  subnet_id      = aws_subnet.opensearch-1.id
   route_table_id = aws_route_table.arms_internal_route.id
 }
 
