@@ -29,7 +29,7 @@ resource "aws_eks_cluster" "aws_eks" {
   role_arn = aws_iam_role.eks_cluster.arn
 
   vpc_config {
-    subnet_ids = [aws_subnet.nuxeo-1]
+    subnet_ids = [aws_subnet.nuxeo-1, aws_subnet.nuxeo-2]
   }
 
   tags = {
