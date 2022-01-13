@@ -29,7 +29,7 @@ resource "aws_eks_cluster" "aws_eks" {
   role_arn = aws_iam_role.eks_cluster.arn
 
   vpc_config {
-    subnet_ids = [aws_subnet.nuxeo-1, aws_subnet.nuxeo-2]
+    subnet_ids = [aws_subnet.nuxeo-1.id, aws_subnet.nuxeo-2.id]
   }
 
   tags = {
@@ -75,7 +75,7 @@ resource "aws_eks_node_group" "node" {
   cluster_name    = aws_eks_cluster.aws_eks.name
   node_group_name = "node-nuxeo"
   node_role_arn   = aws_iam_role.eks_nodes.arn
-  subnet_ids      = [aws_subnet.nuxeo-1, aws_subnet.nuxeo-2, aws_subnet.nuxeo-3]
+  subnet_ids      = [aws_subnet.nuxeo-1.id, aws_subnet.nuxeo-2.id, aws_subnet.nuxeo-3.id]
 
 ## Scalling options though optional
   scaling_config {
