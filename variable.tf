@@ -4,22 +4,64 @@ variable "vpc_cidr" {
   default     = "10.0.0.0/16"
 }
 
-variable "subnet_cidr" {
+variable "tenancy" {
   type        = string
-  description = "The IP range to use for the VPC"
+  description = "Tenancy for VPc"
+  default     = "default"
+}
+
+variable "OS_subnet_cidr" {
+  type        = string
+  description = "The IP range to use for the Subnet"
   default     = "10.0.0.0/25"
 }
 
-variable "subnet_cidr2" {
+variable "OS_subnet_cidr2" {
   type        = string
-  description = "The IP range to use for the VPC"
+  description = "The IP range to use for the Subnet"
   default     = "10.0.0.128/25"
 }
 
-variable "subnet_cidr3" {
+variable "OS_subnet_cidr3" {
   type        = string
-  description = "The IP range to use for the VPC"
+  description = "The IP range to use for the Subnet"
   default     = "10.0.1.0/25"
+}
+
+variable "nuxeo_subnet_cidr" {
+  type        = string
+  description = "The IP range to use for the Subnet"
+  default     = "10.0.1.128/25"
+}
+
+variable "nuxeo_subnet_cidr2" {
+  type        = string
+  description = "The IP range to use for the Subnet"
+  default     = "10.0.2.128/25"
+}
+
+variable "nuxeo_subnet_cidr3" {
+  type        = string
+  description = "The IP range to use for the Subnet"
+  default     = "10.0.2.0/25"
+}
+
+variable "kafka_subnet_cidr" {
+  type        = string
+  description = "The IP range to use for the Subnet"
+  default     = "10.0.3.0/25"
+}
+
+variable "kafka_subnet_cidr2" {
+  type        = string
+  description = "The IP range to use for the Subnet"
+  default     = "10.0.3.128/25"
+}
+
+variable "kafka_subnet_cidr3" {
+  type        = string
+  description = "The IP range to use for the Subnet"
+  default     = "10.0.4.0/25"
 }
 
 variable "az-1" {
